@@ -1,0 +1,29 @@
+.newsletter {
+    background: rgb(228, 228, 228);
+}
+
+.subscribeinput {
+    border: none;
+    font-size: 15px;
+    padding: 7px 70px;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.head {
+    letter-spacing: 3px;
+}
+
+.subscribebtn {
+    padding: 7px 10px;
+    border: none;
+    border-radius: 0px 20px 20px 0px;
+    background-color: rgb(238, 70, 18);
+    color: aliceblue;
+}
+
+.suft {
+    font-size: 25px;
+}
+.ibg{
+    font-size: 20px;
+}
