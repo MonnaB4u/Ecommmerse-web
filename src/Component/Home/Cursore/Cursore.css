@@ -10,5 +10,6 @@
 }
 .slide:hover{
     background: rgb(241, 111, 111);
+    cursor: pointer;
 
 }
