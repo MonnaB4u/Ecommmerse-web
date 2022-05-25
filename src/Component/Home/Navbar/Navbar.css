@@ -5,3 +5,9 @@
 .img-logo{
 width: 15%;
 }
+.loginbtn{
+    padding: 0px 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}

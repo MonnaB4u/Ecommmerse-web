@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import fakeData from '../../Data/index'
 import Cart from '../Cart/Cart';
@@ -8,14 +8,51 @@ import './ProductDetails.css'
 
 const ProductDetails = () => {
     const { ID } = useParams()
-    const Product = fakeData.find(data => data.key.toString() === ID)
-    // console.log(Product)
+    const Products = fakeData.find(data => data.key.toString() === ID)
+
+
+    const [Product, setData] = useState([])
+
+
+
+
+    // console.log("hello", Product)
+    useEffect(() => {
+        const url1 = `http://localhost:5000/ProductCollection/${ID}`
+        const url2 = `http://localhost:5000/laptopCollection/${ID}`
+        const url3 = `http://localhost:5000/cameraCollection/${ID}`
+        const url4 = `http://localhost:5000/smartPhoneCollection/${ID}`
+        fetch(url1)
+            .then(res => res.json())
+            .then(data => setData(data))
+
+        fetch(url2)
+            .then(res => res.json())
+            .then(data => setData(data))
+        fetch(url3)
+            .then(res => res.json())
+            .then(data => setData(data))
+        fetch(url4)
+            .then(res => res.json())
+            .then(data => setData(data))
+    }, [])
+
     const [cart, setCart] = useState([])
     const handlecart = ((product) => {
-        // setData(cart + 1)
         const pd = [...cart, product]
         setCart(pd)
     })
+    //////////// set Data in localStorage
+
+    const [local, setLocal] = useState([])
+    const [message, setmessage] = useState("")
+    const handleAddFav = (e) => {
+        localStorage.setItem("product", local.length < 1 ? JSON.stringify(e) : setmessage("product already exist"));
+        // const pd = [...local, e]
+        // setLocal(pd)
+    }
+
+
 
     return (
         <div className="product-details">
@@ -32,10 +69,11 @@ const ProductDetails = () => {
                                 <small className="">Seller : {Product.seller}</small>
                             </div>
                             <div className="d-flex justify-content-end mb-4">
+                                <button onClick={() => handleAddFav(Product)} className="addCartbtn bg-danger text-white mt-3 mx-3 ">Add to Favourite</button>
                                 <button onClick={() => handlecart(Product)} className="addCartbtn bg-danger text-white mt-3 ">Add to Cart</button>
-                                 {/* <button onClick={() => handlereduce(Product)} className="addCartbtn bg-danger text-white mt-3 ">Reduce to Cart</button> */}
-                            </div>
 
+                            </div>
+                            <small className="text-danger">{message}</small>
                         </div>
 
                     </div>

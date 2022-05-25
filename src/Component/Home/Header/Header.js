@@ -1,5 +1,6 @@
 import React from 'react';
 import Cursore from '../Cursore/Cursore';
+import DiscountProducts from '../DiscountProducts/DiscountProducts';
 import Footer from '../Footer/Footer';
 import HotDeal from '../HotDeal/HotDeal';
 import Navbar from '../Navbar/Navbar';
@@ -16,6 +17,7 @@ const Header = () => {
             <NewProduct></NewProduct>
             <HotDeal></HotDeal>
             <TopSellingOne></TopSellingOne>
+            <DiscountProducts></DiscountProducts>
             <TopSellingTwo></TopSellingTwo>
             <NEWSLETTER></NEWSLETTER>
             <Footer></Footer>

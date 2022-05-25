@@ -3,15 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 const Cart = (props) => {
     const cart = props.cart;
-
-    // console.log(cart);
-
     const total = cart.reduce((total, prd) => total + prd.price, 0);
-    //     let total=0;
-    //    for (let i = 0; i < cart.length; i++) {
-    //        const product = cart[i];
-    //        total = total + product.price;
-    //    }
+
     let shipping = 0;
     if (total > 200) {
         shipping = 0
@@ -26,8 +19,7 @@ const Cart = (props) => {
 
 
     const { ID } = useParams();
-    const findId = cart.find(product => product.key.toString() === ID)
-    // const findName = cart.find(product => product.name.toString())
+    const findId = cart.find(product => product._id.toString() === ID)
 
     const navigation = useNavigate()
 
@@ -35,7 +27,7 @@ const Cart = (props) => {
         if (cart.length === 0) {
             alert("Please Add to Cart First Before You Order ")
         } else {
-            navigation(`/confirmOrder${findId.key}`)
+            navigation(`/confirmOrder/${findId._id}`)
         }
     }
 

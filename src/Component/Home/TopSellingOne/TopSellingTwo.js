@@ -7,16 +7,16 @@ const TopSellingTwo = () => {
             <div class="container">
                 <div class="row tex-center">
                     <div class="col-sm-3 mx-5">
-                        <p className="h6 mx-5 line">Top Selling</p>
+                        <p className="h6 mx-5 line">Recommended</p>
                         <TopSellingMain></TopSellingMain>
                     </div>
 
                     <div class="col-sm-3 mx-5 ">
-                        <p className="h6  mx-5 line">Top Selling</p>
+                        <p className="h6  mx-5 line">Top Trending</p>
                         <TopSellingMain></TopSellingMain>
                     </div>
                     <div class="col-sm-3 mx-5">
-                        <p className="h6 mx-5 line">Top Selling</p>
+                        <p className="h6 mx-5 line">New Products</p>
                         <TopSellingMain></TopSellingMain>
                     </div>
                 </div>

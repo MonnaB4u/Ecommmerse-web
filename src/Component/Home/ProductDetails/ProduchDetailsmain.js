@@ -4,6 +4,7 @@ import Navbar from '../Navbar/Navbar';
 import ProductDetails from './ProductDetails';
 
 const ProduchDetailsmain = () => {
+
     return (
         <div>
             <Navbar></Navbar>

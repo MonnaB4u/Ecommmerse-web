@@ -8,13 +8,15 @@ const NewDatasCard = () => {
     const slicenewPro = fakeData.slice(0, 4)
     const [data, setData] = useState(slicenewPro)
     const navigate = useNavigate()
+
+    console.log(fakeData)
     return (
         <div className="">
             <div className="row mx-5">
                 {
                     data.map((each, index) =>
                         <>
-                            <div className="col-md-3 curs" onClick={() =>{ navigate(`/productDetils${each.key}`)}} >
+                            <div className="col-md-3 curs" onClick={() => { navigate(`/productDetils${each.key}`) }} >
                                 <div className="box">
                                     <img src={each.img} alt="" />
                                     <p className=" h6 text-justify boxp">{each.name}</p>

@@ -11,7 +11,7 @@ const TopSellingMain = () => {
             {
                 data.map((each, index) =>
                     <>
-                        <div className="d-flex c my-3 curs" onClick={() =>{ navigate(`/productDetils${each.key}`)}}>
+                        <div className="d-flex c my-3 curs" onClick={() =>{ navigate(`/productDetils/${each.key}`)}}>
                             <img className="img-fluid m-3" src={each.img} alt="" />
                             <div className="">
                                 <small className="bg-light">{each.category}</small>
